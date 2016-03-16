@@ -161,7 +161,7 @@ class Advert extends Model
      *
      */
     private function deleteImage(){
-        if(Storage::exists($this->image_path) && $this->image_path !== ""){
+        if(Storage::exists($this->image_path) && $this->image_path !== null){
             Storage::delete($this->image_path);
         }
     }
