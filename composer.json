@@ -9,8 +9,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-      "intervention/image": "^2.3",
-        "adumskis/laravel-advert": "dev-master"
+      "intervention/image": "^2.3"
     },
     "autoload": {
       "psr-4": {
