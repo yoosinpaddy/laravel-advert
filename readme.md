@@ -10,14 +10,14 @@ Then add service provider to config/app.php:
 ```php
 'providers' => [
     ...
-    \Adumskis\LaravelAdvert\AdvertServiceProvider::class,
+    Adumskis\LaravelAdvert\AdvertServiceProvider::class,
 ],
 ```
 Facede to aliases:
 ```php
 'aliases' => [
     ...
-    'AdvMng'    => \Adumskis\LaravelAdvert\AdvertFacade::class,
+    'AdvMng'    => Adumskis\LaravelAdvert\AdvertFacade::class,
 ],
 ```
 And last is to publish config, migrations and view:
