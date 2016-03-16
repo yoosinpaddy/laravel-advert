@@ -1,0 +1,13 @@
+{
+    "name": "artme/laravel-advert",
+    "description": "Advertising helper for laravel",
+    "authors": [
+        {
+            "name": "Algirdas",
+            "email": "algirdasdum@gmail.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.3"
+    }
+}
