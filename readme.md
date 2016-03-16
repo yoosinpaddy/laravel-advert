@@ -4,7 +4,7 @@ Simple package that helps add advert to Laravel 5 websites. What is more it allo
 ### Installation
 First require package with composer:
 ```sh
-$ composer require adumskis\laravel-advert
+$ composer require adumskis/laravel-advert
 ```
 Then add service provider to config/app.php:
 ```php

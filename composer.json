@@ -1,6 +1,7 @@
 {
     "name": "adumskis/laravel-advert",
     "description": "Advertising helper for laravel",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Algirdas",
