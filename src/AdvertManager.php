@@ -1,9 +1,9 @@
 <?php
-namespace Artme\LaravelAdvert;
+namespace Adumskis\LaravelAdvert;
 
 
-use Artme\LaravelAdvert\Model\Advert;
-use Artme\LaravelAdvert\Model\AdvertCategory;
+use Adumskis\LaravelAdvert\Model\Advert;
+use Adumskis\LaravelAdvert\Model\AdvertCategory;
 use Illuminate\Container\Container;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\HtmlString;

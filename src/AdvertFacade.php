@@ -1,5 +1,5 @@
 <?php
-namespace Artme\LaravelAdvert;
+namespace Adumskis\LaravelAdvert;
 
 use Illuminate\Support\Facades\Facade;
 

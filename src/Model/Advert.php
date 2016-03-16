@@ -1,6 +1,6 @@
 <?php
 
-namespace Artme\LaravelAdvert\Model;
+namespace Adumskis\LaravelAdvert\Model;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Facades\Image;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Artme\LaravelAdvert\Model\AdvertCategory;
+use Adumskis\LaravelAdvert\Model\AdvertCategory;
 
 class Advert extends Model
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Artme\LaravelAdvert;
+namespace Adumskis\LaravelAdvert;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Artme\LaravelAdvert\Model\Advert;
+use Adumskis\LaravelAdvert\Model\Advert;
 
 use App\Http\Requests;
 

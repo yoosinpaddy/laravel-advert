@@ -1,5 +1,5 @@
 <?php
-namespace Artme\LaravelAdvert;
+namespace Adumskis\LaravelAdvert;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -35,7 +35,7 @@ class AdvertServiceProvider extends ServiceProvider
     public function register()
     {
         include __DIR__.'/routes.php';
-        $this->app->make('Artme\LaravelAdvert\AdvertManagerController');
+        $this->app->make('Adumskis\LaravelAdvert\AdvertManagerController');
         $this->app->singleton('advert_manager', function() {
             return new AdvertManager();
         });

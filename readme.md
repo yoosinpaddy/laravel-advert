@@ -4,20 +4,20 @@ Simple package that helps add advert to Laravel 5 websites. What is more it allo
 ### Installation
 First require package with composer:
 ```sh
-$ composer require artme\laravel-advert
+$ composer require adumskis\laravel-advert
 ```
 Then add service provider to config/app.php:
 ```php
 'providers' => [
     ...
-    \Artme\LaravelAdvert\AdvertServiceProvider::class,
+    \Adumskis\LaravelAdvert\AdvertServiceProvider::class,
 ],
 ```
 Facede to aliases:
 ```php
 'aliases' => [
     ...
-    'AdvMng'    => \Artme\LaravelAdvert\AdvertFacade::class,
+    'AdvMng'    => \Adumskis\LaravelAdvert\AdvertFacade::class,
 ],
 ```
 And last is to publish config, migrations and view:

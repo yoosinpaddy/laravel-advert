@@ -1,6 +1,6 @@
 <?php
 
-namespace Artme\LaravelAdvert\Model;
+namespace Adumskis\LaravelAdvert\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
