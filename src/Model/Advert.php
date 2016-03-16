@@ -131,6 +131,8 @@ class Advert extends Model
         $image = Image::make($file);
         $image_name = Advert::generateImageName();
         $advert_category = $this->advert_category;
+        $width = $advert_category->width?$advert_category->width:null;
+        $height = $advert_category->height?$advert_category->height:null;
         if($advert_category->width === null || $advert_category->height === null){
             $image->resize($advert_category->width, $advert_category->height, function ($constraint) {
                 $constraint->aspectRatio();

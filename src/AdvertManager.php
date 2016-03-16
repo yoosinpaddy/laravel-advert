@@ -52,6 +52,7 @@ class AdvertManager {
                     $query->whereNotIn('id', $this->used);
                 }
             })
+            ->active()
             ->orderBy('viewed_at', 'ASC')
             ->first();
 
