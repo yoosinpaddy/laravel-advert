@@ -11,5 +11,10 @@
     "require": {
       "intervention/image": "^2.3",
         "adumskis/laravel-advert": "dev-master"
+    },
+    "autoload": {
+      "psr-4": {
+        "Adumskis\\LaravelAdvert\\": "src/"
+      }
     }
 }
