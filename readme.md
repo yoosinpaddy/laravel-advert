@@ -36,7 +36,7 @@ If width or height is set to 0 then advert image will be resized with [aspectRat
 
 ### Advert model
 Eloquent model, variables:
-  - alt - (string) <img /> alt parrameter tag
+  - alt - (string) <img /> alt parameter tag
   - url - (string) url address where advert should redirect on click
   - image_url - (string) url addres of advert image
   - image_path - (string) path to image (from base path)
