@@ -39,6 +39,16 @@ class AdvertServiceProvider extends ServiceProvider
         $this->app->singleton('advert_manager', function() {
             return new AdvertManager();
         });
+
+        /*
+         * Register the service provider for the dependency.
+         */
+        $this->app->register(\Rymanalu\LaravelSimpleUploader\UploaderServiceProvider::class);
+        /*
+         * Create aliases for the dependency.
+         */
+        $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+        $loader->alias('Uploader', 'Rymanalu\LaravelSimpleUploader\UploaderServiceProvider');
     }
 
     /**

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Facades\Image;
+use Rymanalu\LaravelSimpleUploader\Support\Uploader;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Adumskis\LaravelAdvert\Model\AdvertCategory;
 
@@ -141,7 +142,8 @@ class Advert extends Model
             $image->resize($advert_category->width, $advert_category->height);
         }
 
-        $image->save(config('laravel-advert.upload_path').'/'.$image_name);
+        Uploader::from('local')->uploadTo(config('default_fileSystem'))->toFolder(config('upload_path'))->renameTo($image_name)->setVisibility('public')->upload($image->stream()->__toString());
+
 
         $this->update([
             'image_url' => config('laravel-advert.upload_path').'/'.$image_name,
@@ -161,8 +163,10 @@ class Advert extends Model
      *
      */
     private function deleteImage(){
-        if(Storage::exists($this->image_path) && $this->image_path !== null){
-            Storage::delete($this->image_path);
+        $storage = Storage::disk(config('default_fileSystem'));
+
+        if($storage->exists($this->image_path) && $this->image_path !== null){
+            $storage->delete($this->image_path);
         }
     }
 
