@@ -19,6 +19,11 @@ class AdvertServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        $this->loadRoutesFrom(__DIR__ . '/routes.php');
+        $this->loadViewsFrom(__DIR__.'/view', 'AdvMng');
+
+
         // Publish a config file
         $this->publishes([
             __DIR__.'/../config/config.php' => config_path('laravel-advert.php')
@@ -44,8 +49,6 @@ class AdvertServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        include __DIR__ . '/routes.php';
-        $this->app->make('Adumskis\LaravelAdvert\AdvertManagerController');
         $this->app->singleton('advert_manager', function() {
             return new AdvertManager();
         });
