@@ -7,24 +7,36 @@ First require package with composer:
 $ composer require adumskis/laravel-advert dev-master
 ```
 Then add service provider to config/app.php:
+> Laravel 5.5 uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider
 ```php
 'providers' => [
     ...
     Adumskis\LaravelAdvert\AdvertServiceProvider::class,
 ],
 ```
-Facede to aliases:
+Facade to aliases:
 ```php
 'aliases' => [
     ...
     'AdvMng'    => Adumskis\LaravelAdvert\AdvertFacade::class,
 ],
 ```
-And last is to publish config, migrations and view:
+Publish config:
 ```sh
-$ php artisan vendor:publish
+$ php artisan vendor:publish --provider="Adumskis\LaravelAdvert\AdvertServiceProvider" --tag=config
+```
+
+Publish Advert view:
+```sh
+$ php artisan vendor:publish --provider="Adumskis\LaravelAdvert\AdvertServiceProvider" --tag=views
+```
+
+Lastly publish the migrations if you want to edit them and migrate
+```sh
+$ php artisan vendor:publish --provider="Adumskis\LaravelAdvert\AdvertServiceProvider" --tag=migrations
 $ php artisan migrate
 ```
+
 
 ### AdvertCategory model
 Simple Eloquent model with variables:
@@ -65,7 +77,16 @@ It will take the that with lowest viewed_at parameter. getHTML method allow add 
     {{ AdvMng::getHTML('type', true)
 ```
 
+### Advert image storage
+```php
+    'default_fileSystem' => 'public',
+```
+To use the inbuilt ability of laravels multiple filesystems change this to another public facing service provider such as s3.
+
+
 ### ToDo
   - Add limit to advert views/clicks
+  - Advert Campaigns
+  - Advert Cost per click and cost per view?
 
 [aspertRatio]:http://image.intervention.io/api/resize
