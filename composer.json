@@ -21,7 +21,7 @@
           "Adumskis\\LaravelAdvert\\AdvertServiceProvider"
         ],
         "aliases": {
-          "AdvMng": "dumskis\\LaravelAdvert\\AdvertFacade"
+          "AdvMng": "Adumskis\\LaravelAdvert\\AdvertFacade"
         }
       }
     }
