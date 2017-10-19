@@ -16,5 +16,15 @@
       "psr-4": {
         "Adumskis\\LaravelAdvert\\": "src/"
       }
+    },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Rymanalu\\LaravelSimpleUploader\\UploaderServiceProvider"
+      ],
+      "aliases": {
+        "uploader": "Rymanalu\\LaravelSimpleUploader\\Support\\Uploader"
+      }
     }
+  },
 }

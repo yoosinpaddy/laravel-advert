@@ -48,7 +48,7 @@ class AdvertServiceProvider extends ServiceProvider
          * Create aliases for the dependency.
          */
         $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-        $loader->alias('Uploader', 'Rymanalu\LaravelSimpleUploader\UploaderServiceProvider');
+        $loader->alias('Uploader', 'Rymanalu\LaravelSimpleUploader\Support\Uploader');
     }
 
     /**
