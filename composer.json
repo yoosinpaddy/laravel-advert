@@ -9,21 +9,10 @@
     ],
     "require": {
       "intervention/image": "^2.3",
-      "rymanalu/laravel-simple-uploader": "^1.1"
     },
     "autoload": {
       "psr-4": {
         "Adumskis\\LaravelAdvert\\": "src/"
       }
-    },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "Rymanalu\\LaravelSimpleUploader\\UploaderServiceProvider"
-      ],
-      "aliases": {
-        "uploader": "Rymanalu\\LaravelSimpleUploader\\Support\\Uploader"
-      }
     }
-  }
 }
