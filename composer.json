@@ -10,7 +10,7 @@
     "minimum-stability": "dev",
     "require": {
       "intervention/image": "^2.3",
-      "rymanalu/laravel-simple-uploader": "dev-master"
+      "rymanalu/laravel-simple-uploader": "1.1"
     },
     "autoload": {
       "psr-4": {
