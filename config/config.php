@@ -6,20 +6,26 @@ return [
     | Default Filesystem Disk
     |--------------------------------------------------------------------------
     |
-    | Here you may specify the default file system to be used for uploading the inages
-    | of the adverts
+    | Here you may specify the default file system to be used for uploading the
+    | images of the adverts, please ensure that these are public facing
+    | filesystems.
     |
-    | Supported: "local", "ftp", "s3", "rackspace"
+    | Supported: "public", "s3"
     |
     */
 
-    'default_fileSystem' => 'local',
+    'default_fileSystem' => 'public',
 
 
+    /*
+    |--------------------------------------------------------------------------
+    | Default Upload Path
+    |--------------------------------------------------------------------------
+    |
+    | Path should not contain adv/advert/ad or anything similar to word 'advert'
+    | because browser ad blocking software will block your ads from being viewed.
+    |
+    */
 
-
-
-    // Path should not contain adv/advert/ad or anything similar to word 'advert'
-    // because of ad-block
     'upload_path' => 'uploads/a'
 ];
