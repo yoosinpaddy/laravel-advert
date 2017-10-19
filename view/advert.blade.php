@@ -1,3 +1,3 @@
 <a href="{{ $advert->getURL() }}" target="_blank">
-    <img src="{{ $advert->image_url }}" alt="{{ $advert->alt }}">
+    <img src="{{ $advert->getImageUrl() }}" alt="{{ $advert->alt }}">
 </a>

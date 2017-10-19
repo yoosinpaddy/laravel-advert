@@ -175,4 +175,10 @@ class Advert extends Model
     public function getURL(){
         return url('a/'.$this->id);
     }
+
+
+    public function getImageUrl(){
+        return Storage::disk(config('laravel-advert.default_fileSystem'))
+            ->url(config('laravel-advert.upload_path').'/'. $this->image_path);
+    }
 }
