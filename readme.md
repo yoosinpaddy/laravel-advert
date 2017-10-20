@@ -91,6 +91,7 @@ To use the inbuilt ability of laravels multiple filesystems change this to anoth
   - Video Adverts.
   - Time of day adverts
   - Multiple adverts per campaign
-  - Multiple images / videos per advert/
+  - Multiple images / videos per advert.
+  - Follow Ad galley guide and create different size ads for different regions of the page.
 
 [aspertRatio]:http://image.intervention.io/api/resize
