@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Facades\Image;
-use Rymanalu\LaravelSimpleUploader\Support\Uploader;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Adumskis\LaravelAdvert\Model\AdvertCategory;
 
@@ -114,11 +113,13 @@ class Advert extends Model
         return $this->update(['clicks' => 0]);
     }
 
+    /**
+     * @return bool
+     */
     public function updateLastViewed(){
         $this->viewed_at = Carbon::now();
-        $this->save();
+        return $this->save();
     }
-
 
     /**
      * @param string $extension
@@ -182,6 +183,9 @@ class Advert extends Model
     }
 
 
+    /**
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
+     */
     public function getImageUrl(){
         return url(Storage::disk(config('laravel-advert.default_fileSystem'))
             ->url($this->image_path));

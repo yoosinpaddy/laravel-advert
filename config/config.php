@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'default_fileSystem' => 'public',
+    'default_file_system' => 'public',
 
 
     /*
