@@ -114,6 +114,11 @@ class Advert extends Model
         return $this->update(['clicks' => 0]);
     }
 
+    public function updateLastViewed(){
+        $this->viewed_at = Carbon::now();
+        $this->save();
+    }
+
 
     /**
      * @param string $extension
