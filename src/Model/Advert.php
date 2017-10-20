@@ -148,7 +148,7 @@ class Advert extends Model
             $image->resize($advert_category->width, $advert_category->height);
         }
 
-        Storage::disk(config('laravel-advert.default_fileSystem'))->put(config('laravel-advert.upload_path').'/'. $image_name, $image->stream()->__toString(), 'public');
+        Storage::disk(config('laravel-advert.default_file_system'))->put(config('laravel-advert.upload_path').'/'. $image_name, $image->stream()->__toString(), 'public');
 
         $this->update([
             'image_url' => config('laravel-advert.upload_path').'/'.$image_name,
@@ -168,7 +168,7 @@ class Advert extends Model
      *
      */
     private function deleteImage(){
-        $storage = Storage::disk(config('laravel-advert.default_fileSystem'));
+        $storage = Storage::disk(config('laravel-advert.default_file_system'));
 
         if($storage->exists($this->image_path) && $this->image_path !== null){
             $storage->delete($this->image_path);
@@ -187,7 +187,7 @@ class Advert extends Model
      * @return \Illuminate\Contracts\Routing\UrlGenerator|string
      */
     public function getImageUrl(){
-        return url(Storage::disk(config('laravel-advert.default_fileSystem'))
+        return url(Storage::disk(config('laravel-advert.default_file_system'))
             ->url($this->image_path));
     }
 }
