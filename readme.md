@@ -84,7 +84,7 @@ It will take the that with lowest viewed_at parameter. getHTML method allow add 
 To use the inbuilt ability of laravels multiple filesystems change this to another public facing service provider such as s3.
 
 
-### ToDo
+### ToDo/Ideas
   - Add limit to advert views/clicks
   - Advert Campaigns
   - Advert Cost per click and cost per view?
