@@ -113,6 +113,13 @@ class Advert extends Model
         return $this->update(['clicks' => 0]);
     }
 
+    /**
+     * @return bool
+     */
+    public function updateLastViewed(){
+        $this->viewed_at = Carbon::now();
+        return $this->save();
+    }
 
     /**
      * @param string $extension
@@ -141,7 +148,7 @@ class Advert extends Model
             $image->resize($advert_category->width, $advert_category->height);
         }
 
-        $image->save(config('laravel-advert.upload_path').'/'.$image_name);
+        Storage::disk(config('laravel-advert.default_file_system'))->put(config('laravel-advert.upload_path').'/'. $image_name, $image->stream()->__toString(), 'public');
 
         $this->update([
             'image_url' => config('laravel-advert.upload_path').'/'.$image_name,
@@ -161,8 +168,10 @@ class Advert extends Model
      *
      */
     private function deleteImage(){
-        if(Storage::exists($this->image_path) && $this->image_path !== null){
-            Storage::delete($this->image_path);
+        $storage = Storage::disk(config('laravel-advert.default_file_system'));
+
+        if($storage->exists($this->image_path) && $this->image_path !== null){
+            $storage->delete($this->image_path);
         }
     }
 
@@ -171,5 +180,14 @@ class Advert extends Model
      */
     public function getURL(){
         return url('a/'.$this->id);
+    }
+
+
+    /**
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
+     */
+    public function getImageUrl(){
+        return url(Storage::disk(config('laravel-advert.default_file_system'))
+            ->url($this->image_path));
     }
 }

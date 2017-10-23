@@ -7,13 +7,22 @@
             "email": "algirdasdum@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
       "intervention/image": "^2.3"
     },
     "autoload": {
       "psr-4": {
-        "Adumskis\\LaravelAdvert\\": "src/"
+        "Adumskis\\LaravelAdvert\\": "src"
+      }
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "Adumskis\\LaravelAdvert\\AdvertServiceProvider"
+        ],
+        "aliases": {
+          "AdvMng": "Adumskis\\LaravelAdvert\\AdvertFacade"
+        }
       }
     }
 }

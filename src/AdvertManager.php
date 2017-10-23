@@ -58,6 +58,7 @@ class AdvertManager {
 
         if($advert){
             $advert->plusViews();
+            $advert->updateLastViewed();
             $this->used[$type][] = $advert->id;
             $html = View::make('partials.advert', compact('advert'))->render();
             return new HtmlString($html);

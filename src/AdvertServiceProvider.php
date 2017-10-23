@@ -19,12 +19,27 @@ class AdvertServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        $this->loadRoutesFrom(__DIR__ . '/routes.php');
+        $this->loadViewsFrom(__DIR__.'/view', 'AdvMng');
+
+
+        // Publish a config file
         $this->publishes([
-            __DIR__.'/../config/config.php' => config_path('laravel-advert.php'),
+            __DIR__.'/../config/config.php' => config_path('laravel-advert.php')
+        ], 'config');
+
+        // Publish your migrations
+        $this->publishes([
             __DIR__.'/../migrations/2016_03_11_202301_create_advert_categories_table.php' => database_path('migrations/2016_03_11_202301_create_advert_categories_table.php'),
-            __DIR__.'/../migrations/2016_03_11_202607_create_adverts_table.php' => database_path('migrations/2016_03_11_202607_create_adverts_table.php'),
+            __DIR__.'/../migrations/2016_03_11_202607_create_adverts_table.php' => database_path('migrations/2016_03_11_202607_create_adverts_table.php')
+        ], 'migrations');
+
+        // Publishes view files
+        $this->publishes([
             __DIR__.'/../view/advert.blade.php' => resource_path('views/partials/advert.blade.php')
-        ]);
+        ], 'views');
+
     }
 
     /**
@@ -34,8 +49,6 @@ class AdvertServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        include __DIR__ . '/routes.php';
-        $this->app->make('Adumskis\LaravelAdvert\AdvertManagerController');
         $this->app->singleton('advert_manager', function() {
             return new AdvertManager();
         });
