@@ -14,15 +14,4 @@ class AdvertCategory extends Model
     public function adverts(){
         return $this->hasMany(Advert::class);
     }
-
-    /**
-     *
-     */
-    public function delete(){
-        foreach($this->adverts as $advert){
-            $advert->delete();
-        }
-
-        $this->delete();
-    }
 }
