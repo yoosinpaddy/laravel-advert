@@ -19,6 +19,7 @@ class Advert extends Model implements HasMedia
         'url',
         'views',
         'clicks',
+        'max_clicks',
         'active',
         'advert_category_id'
     ];
