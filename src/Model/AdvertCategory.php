@@ -22,5 +22,7 @@ class AdvertCategory extends Model
         foreach($this->adverts as $advert){
             $advert->delete();
         }
+
+        $this->delete();
     }
 }
