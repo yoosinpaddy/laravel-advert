@@ -6,23 +6,12 @@ use Illuminate\Support\ServiceProvider;
 class AdvertServiceProvider extends ServiceProvider
 {
     /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = true;
-
-    /**
      * Bootstrap the application events.
      *
      * @return void
      */
     public function boot()
     {
-
-        $this->loadRoutesFrom(__DIR__ . '/routes.php');
-        $this->loadViewsFrom(__DIR__.'/view', 'AdvMng');
-
         // Publish your migrations
         $this->publishes([
             __DIR__.'/../migrations/2016_03_11_202301_create_advert_categories_table.php' => database_path('migrations/2016_03_11_202301_create_advert_categories_table.php'),
@@ -34,6 +23,8 @@ class AdvertServiceProvider extends ServiceProvider
             __DIR__.'/../view/advert.blade.php' => resource_path('views/partials/advert.blade.php')
         ], 'views');
 
+        $this->loadRoutesFrom(__DIR__ . '/routes.php');
+        $this->loadViewsFrom(__DIR__.'/view', 'AdvMng');
     }
 
     /**

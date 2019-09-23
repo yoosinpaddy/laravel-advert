@@ -146,6 +146,6 @@ class Advert extends Model implements HasMedia
      */
     public function getURL()
     {
-        return url('a/'.$this->id);
+        return url('/advert/redirection/'.$this->id);
     }
 }

@@ -1,3 +1,3 @@
 <?php
 
-Route::get('advert/redirection/{advert_id}', 'Adumskis\LaravelAdvert\AdvertManagerController@index');
+Route::get('/advert/redirection/{advert_id}', 'Adumskis\LaravelAdvert\AdvertManagerController@index')->name('advert.redirect');
