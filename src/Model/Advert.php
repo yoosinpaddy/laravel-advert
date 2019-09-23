@@ -74,6 +74,14 @@ class Advert extends Model implements HasMedia
         return $this->belongsTo(AdvertCategory::class);
     }
 
+    /*
+     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+     */
+    public function payment()
+    {
+        return $this->morphTo();
+    }
+
     /**
      * @return bool
      */

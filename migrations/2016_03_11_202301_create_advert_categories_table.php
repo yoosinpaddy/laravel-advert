@@ -15,8 +15,8 @@ class CreateAdvertCategoriesTable extends Migration
         Schema::create('advert_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type');
-            $table->integer('width');
-            $table->integer('height');
+            $table->decimal('price')->default('0.00');
+            $table->string('currency', 3);
             $table->timestamps();
         });
     }
