@@ -18,9 +18,13 @@ class AdvertManagerController extends Controller
      * @param $advert_id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function index($advert_id){
+    public function index($advert_id)
+    {
         $advert = Advert::findOrFail($advert_id);
         $advert->plusClicks();
+
+        if($advert->max_clicks <= $advert->clicks)
+            $advert->deactivate();
 
         return redirect($advert->url);
     }
