@@ -23,12 +23,6 @@ class AdvertServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__ . '/routes.php');
         $this->loadViewsFrom(__DIR__.'/view', 'AdvMng');
 
-
-        // Publish a config file
-        $this->publishes([
-            __DIR__.'/../config/config.php' => config_path('laravel-advert.php')
-        ], 'config');
-
         // Publish your migrations
         $this->publishes([
             __DIR__.'/../migrations/2016_03_11_202301_create_advert_categories_table.php' => database_path('migrations/2016_03_11_202301_create_advert_categories_table.php'),

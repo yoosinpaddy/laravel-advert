@@ -1,14 +1,15 @@
 {
-    "name": "adumskis/laravel-advert",
+    "name": "shreyanshpanchal/laravel-advert",
     "description": "Advertising helper for laravel",
     "authors": [
         {
-            "name": "Algirdas",
-            "email": "algirdasdum@gmail.com"
+            "name": "Shreyansh Panchal",
+            "email": "shreyansh@websitex.co"
         }
     ],
     "require": {
-      "intervention/image": "^2.3"
+      "intervention/image": "^2.3",
+      "spatie/laravel-medialibrary": "^7.0.0"
     },
     "autoload": {
       "psr-4": {
