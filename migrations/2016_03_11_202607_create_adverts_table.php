@@ -20,6 +20,7 @@ class CreateAdvertsTable extends Migration
             $table->integer('max_views');
             $table->integer('clicks')->default(0);
             $table->integer('max_clicks');
+            $table->morphs('owner');
             $table->morphs('payment');
             $table->boolean('active');
             $table->integer('advert_category_id')->unsigned();

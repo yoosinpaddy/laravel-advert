@@ -82,6 +82,14 @@ class Advert extends Model implements HasMedia
         return $this->morphTo();
     }
 
+    /*
+     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+     */
+    public function owner()
+    {
+        return $this->morphTo();
+    }
+
     /**
      * @return bool
      */
