@@ -17,6 +17,9 @@ class CreateAdvertCategoriesTable extends Migration
             $table->string('type');
             $table->decimal('price')->default('0.00');
             $table->string('currency', 3);
+            $table->integer('max_clicks')->default(10);
+            $table->string('height')->nullable();
+            $table->string('width')->nullable();
             $table->timestamps();
         });
     }

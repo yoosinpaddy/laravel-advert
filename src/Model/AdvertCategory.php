@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class AdvertCategory extends Model
 {
-    protected $fillable = ['type','price','currency'];
+    protected $fillable = ['type','price','currency','height','width','max_clicks'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
