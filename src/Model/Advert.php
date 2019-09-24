@@ -33,26 +33,11 @@ class Advert extends Model implements HasMedia
      * @throws \Exception
      */
     public static function make(array $data, UploadedFile $image = null){
-        if(!$image){
-            throw new \Exception('UploadedFile required');
-        }
-
-        $validator = Validator::make(
-            $data,
-            [
-                'url' => 'required',
-                'active' => 'boolean',
-                'advert_category_id' => 'required|exists:advert_categories,id'
-            ]
-        );
-
-        if ($validator->fails())
-        {
-            throw new \Exception($validator->messages()->first());
-        }
-
+                
         $advert = Advert::create($data);
-        $advert->addMediaFromRequest('image')->toMediaCollection();
+
+        if($image != null)
+            $advert->addMediaFromRequest('image')->toMediaCollection();
 
         return $advert;
     }
