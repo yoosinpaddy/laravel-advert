@@ -33,11 +33,11 @@ class Advert extends Model implements HasMedia
      * @throws \Exception
      */
     public static function make(array $data, UploadedFile $image = null){
-                
+
         $advert = Advert::create($data);
 
         if($image != null)
-            $advert->addMediaFromRequest('image')->toMediaCollection();
+            $advert->addMedia($image)->toMediaCollection();
 
         return $advert;
     }
