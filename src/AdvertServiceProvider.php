@@ -13,7 +13,7 @@ class AdvertServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadRoutesFrom(__DIR__ . '/routes.php');
-        $this->loadViewsFrom(__DIR__.'/view', 'AdvMng');
+        $this->loadViewsFrom(__DIR__.'/../view', 'AdvMng');
         
         // Publish your migrations
         $this->publishes([
