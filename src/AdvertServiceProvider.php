@@ -23,7 +23,8 @@ class AdvertServiceProvider extends ServiceProvider
 
         // Publishes view files
         $this->publishes([
-            __DIR__.'/../view/advert.blade.php' => resource_path('views/partials/advert.blade.php')
+            __DIR__.'/../view/advert.blade.php' => resource_path('views/partials/advert.blade.php'),
+            __DIR__.'/../view/advertSlider.blade.php' => resource_path('views/partials/advertSlider.blade.php'),
         ], 'views');
 
     }

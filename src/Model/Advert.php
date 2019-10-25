@@ -36,8 +36,13 @@ class Advert extends Model implements HasMedia
 
         $advert = Advert::create($data);
 
-        if($image != null)
-            $advert->addMedia($image)->toMediaCollection();
+        if($image != null) {
+            $advert->addMedia($image)
+                ->withManipulations([
+                    'default' => ['width' => '90', 'height' => 90]
+                ])
+                ->toMediaCollection();
+        }
 
         return $advert;
     }

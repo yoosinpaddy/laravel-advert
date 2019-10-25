@@ -67,4 +67,33 @@ class AdvertManager {
         }
     }
 
+    public function getSliderHTML($type, $duplicate = false){
+        $advert_category = AdvertCategory::where('type', $type)->first();
+        if(!$advert_category){
+            return '';
+        }
+
+        $adverts = $advert_category
+            ->adverts()
+            ->where('active', true)
+            ->where(function($query) use ($duplicate){
+                if(!$duplicate){
+                    $query->whereNotIn('id', $this->used);
+                }
+            })
+            ->active()
+            ->orderBy('viewed_at', 'ASC')
+            ->get();
+
+        if($adverts){
+            $adverts->each->plusViews();
+            $adverts->each->updateLastViewed();
+            $this->used[$type][] = $adverts->pluck('id')->toArray();
+            $html = View::make('partials.advertSlider', compact('adverts'))->render();
+            return new HtmlString($html);
+        } else {
+            return '';
+        }
+    }
+
 }
