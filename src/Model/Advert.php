@@ -46,6 +46,18 @@ class Advert extends Model implements HasMedia
 
         return $advert;
     }
+    
+    public function getDateStart($format = "Y-m-d")
+    {
+        $date = date($format, strtotime($this->date_start))."T".date('H:i', strtotime($this->date_start));
+        return $date;
+    }
+    
+    public function getDateEnd($format = "Y-m-d")
+    {
+        $date = date($format, strtotime($this->date_end))."T".date('H:i', strtotime($this->date_end));
+        return $date;
+    }
 
     /**
      * @param $query
