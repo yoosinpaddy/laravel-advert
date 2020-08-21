@@ -1,10 +1,10 @@
 {
-    "name": "izshreyansh/laravel-advert",
+    "name": "mikadoplus/laravel-advert",
     "description": "Advertising helper for laravel",
     "authors": [
         {
-            "name": "Shreyansh Panchal",
-            "email": "shreyansh@websitex.co"
+            "name": "Mikado Plus",
+            "email": "plo@mikadoplus.lu"
         }
     ],
     "require": {
