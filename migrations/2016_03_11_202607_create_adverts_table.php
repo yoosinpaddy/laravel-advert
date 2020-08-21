@@ -23,6 +23,8 @@ class CreateAdvertsTable extends Migration
             $table->morphs('owner');
             $table->morphs('payment');
             $table->boolean('active');
+            $table->dateTime('date_start', 0);
+            $table->dateTime('date_end', 0);
             $table->integer('advert_category_id')->unsigned();
             $table->timestamp('viewed_at');
             $table->timestamps();
