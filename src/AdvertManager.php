@@ -47,6 +47,8 @@ class AdvertManager {
         $advert = $advert_category
             ->adverts()
             ->where('active', true)
+            ->whereDate('date_start', '>=', date('Y-m-d H:i:s'))
+            ->whereDate('date_end', '<=', date('Y-m-d H:i:s'))
             ->where(function($query) use ($duplicate){
                 if(!$duplicate){
                     $query->whereNotIn('id', $this->used);
@@ -76,6 +78,8 @@ class AdvertManager {
         $adverts = $advert_category
             ->adverts()
             ->where('active', true)
+            ->whereDate('date_start', '>=', date('Y-m-d H:i:s'))
+            ->whereDate('date_end', '<=', date('Y-m-d H:i:s'))
             ->where(function($query) use ($duplicate){
                 if(!$duplicate){
                     $query->whereNotIn('id', $this->used);
